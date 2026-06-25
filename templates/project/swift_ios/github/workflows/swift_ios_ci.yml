@@ -1,0 +1,23 @@
+name: Swift iOS CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  build-test:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: List schemes
+        run: xcodebuild -list
+      - name: Build
+        run: |
+          xcodebuild build             -scheme "${{ vars.XCODE_SCHEME || 'YourScheme' }}"             -destination "platform=iOS Simulator,name=iPhone 16"
+      - name: Test
+        run: |
+          xcodebuild test             -scheme "${{ vars.XCODE_SCHEME || 'YourScheme' }}"             -destination "platform=iOS Simulator,name=iPhone 16"

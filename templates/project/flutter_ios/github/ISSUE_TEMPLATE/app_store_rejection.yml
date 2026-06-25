@@ -1,0 +1,15 @@
+name: App Store rejection
+description: Track App Store review rejection response
+title: "[App Store Rejection]: "
+labels: [app-store]
+body:
+  - type: textarea
+    id: rejection
+    attributes:
+      label: Rejection text, guideline, screenshots
+    validations:
+      required: true
+  - type: textarea
+    id: plan
+    attributes:
+      label: Fix / appeal plan

@@ -1,0 +1,15 @@
+name: Eval failure
+description: Track AI Agent eval regression
+title: "[Eval]: "
+labels: [eval]
+body:
+  - type: textarea
+    id: case
+    attributes:
+      label: Eval case and expected output
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Failure evidence

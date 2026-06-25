@@ -1,0 +1,23 @@
+name: AI Agent Project CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  lint-evals:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prompt file sanity
+        run: |
+          test -d prompts || echo "prompts/ missing"
+          grep -R "NEXT_CODEX_PROMPT" -n . || true
+      - name: Eval placeholder
+        run: |
+          if [ -f package.json ]; then npm test --if-present; fi
+          if [ -f pyproject.toml ] || [ -f requirements.txt ]; then python -m pytest -q || true; fi

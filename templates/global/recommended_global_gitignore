@@ -1,0 +1,15 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+*.log
+*.tmp
+DerivedData/
+.build/
+build/
+.dart_tool/
+Pods/
+node_modules/
+.venv/
+__pycache__/
+coverage/
