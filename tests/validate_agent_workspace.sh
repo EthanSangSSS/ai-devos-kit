@@ -38,10 +38,11 @@ name: fixture_repo
 description: Fixture repo for agent workspace validation.
 EOF
 mkdir -p docs
+: > docs/.gitkeep
 cat > AGENTS.md <<'EOF'
 # Agent Rules
 EOF
-git add README.md pubspec.yaml AGENTS.md docs
+git add README.md pubspec.yaml AGENTS.md docs/.gitkeep
 git commit -m "test: init fixture repo" >/dev/null
 
 bash "$kit_root/scripts/agent_workspace_snapshot.sh"
