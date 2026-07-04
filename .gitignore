@@ -22,3 +22,10 @@ coverage/
 docs/NEXT_CODEX_PROMPT_*.md
 docs/PROJECT_CONTEXT_FOR_AGENT.md
 _probe/*.raw
+
+# Agent workspace generated runtime state
+.agent/current_state.md
+.agent/catalog.json
+.agent/handoffs/NEXT_AGENT_PROMPT.md
+.agent/runs/
+.agent/telemetry/
