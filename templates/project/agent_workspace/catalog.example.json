@@ -1,0 +1,21 @@
+{
+  "schema_version": "1",
+  "generated_at": "YYYYMMDD_HHMMSS",
+  "repo": {
+    "root": "/path/to/repo",
+    "branch": "main",
+    "head": "commit-sha",
+    "project_type": "flutter_or_dart"
+  },
+  "entrypoints": [
+    "AGENTS.md",
+    "PROJECT_COMMAND_CENTER.md",
+    "docs/project_kb/APP_PROJECT_KB.md"
+  ],
+  "validation_commands": [
+    "dart format --set-exit-if-changed .",
+    "flutter analyze",
+    "flutter test",
+    "git diff --check"
+  ]
+}
