@@ -1,10 +1,25 @@
 # AI DevOS Kit
 
+[![Portfolio](https://img.shields.io/badge/portfolio-agent%20workflow%20OS-blue)](docs/PORTFOLIO_OVERVIEW.md)
+[![Scope](https://img.shields.io/badge/scope-local--first%20automation-success)](docs/PORTFOLIO_OVERVIEW.md)
+[![Discipline](https://img.shields.io/badge/principle-Verify%20First-informational)](docs/PORTFOLIO_OVERVIEW.md)
+[![Actions](https://img.shields.io/badge/CI-GitHub%20Actions-informational)](https://github.com/EthanSangSSS/ai-devos-kit/actions)
+
 AI DevOS Kit is a **local-first development workflow kit for solo developers and small teams using AI coding agents**.
 
 It provides reusable templates, scripts, prompts, SOPs, and handoff contracts for Flutter iOS, Swift iOS, and AI-agent projects. The goal is to make AI-assisted development repeatable: each agent run should start from verified repo state, operate inside a bounded task scope, produce durable artifacts, and leave behind enough evidence for a human or another agent to review.
 
 Core principles: **Verify First**, **Trust Telemetry**, **Assume Isolation**, **No destructive changes**, **No secret exposure**, **Reusable First**, **Automation First**, **Agent Friendly**.
+
+## Portfolio fast path
+
+Start here if you are reviewing this as a portfolio project:
+
+- [`docs/PORTFOLIO_OVERVIEW.md`](docs/PORTFOLIO_OVERVIEW.md) — one-page reviewer guide, Mermaid architecture map, core surfaces, and demo flow.
+- `scripts/agent_workspace_snapshot.sh` — generates a compact repository snapshot for agent consumption.
+- `scripts/agent_run_init.sh` — initializes auditable per-task run artifacts.
+- `scripts/repo_health_check.sh` — verifies repo state before work starts.
+- `scripts/secret_redacted_scan.sh` — reduces risk of private material leaking into prompts or artifacts.
 
 ## Why this exists
 
