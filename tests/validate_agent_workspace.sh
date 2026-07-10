@@ -55,6 +55,10 @@ find .agent/telemetry -name 'snapshot_*.json' -type f | grep -q . || fail "missi
 grep -q 'flutter_or_dart' .agent/catalog.json || fail "catalog should detect flutter_or_dart fixture"
 grep -q 'AGENTS.md' .agent/catalog.json || fail "catalog should include AGENTS.md entrypoint"
 grep -q 'Version sync gate' .agent/handoffs/NEXT_AGENT_PROMPT.md || fail "handoff prompt should include version sync gate"
+grep -Fq 'Only run `git pull --ff-only` when the task packet explicitly authorizes it.' .agent/handoffs/NEXT_AGENT_PROMPT.md || fail "handoff prompt should require explicit pull authorization"
+if grep -Fq 'If local HEAD differs from the target branch head, run: git pull --ff-only origin <branch>' .agent/handoffs/NEXT_AGENT_PROMPT.md; then
+  fail "handoff prompt must not prescribe an automatic pull"
+fi
 
 bash "$kit_root/scripts/agent_run_init.sh" "Sample Task"
 run_dir="$(find .agent/runs -maxdepth 1 -mindepth 1 -type d | head -n 1)"
@@ -64,5 +68,9 @@ for f in task.md preflight.md git_state_before.txt commands.log validation.md op
 done
 
 grep -q 'human_review_required' "$run_dir/telemetry.json" || fail "telemetry should require human review by default"
+grep -Fq 'Only run `git pull --ff-only` when the task packet explicitly authorizes it.' "$run_dir/preflight.md" || fail "run preflight should require explicit pull authorization"
+if grep -Fq 'If local HEAD differs from target head, run git pull --ff-only origin <branch>.' "$run_dir/preflight.md"; then
+  fail "run preflight must not prescribe an automatic pull"
+fi
 
 log "isolated fixture validation passed"

@@ -206,7 +206,7 @@ validation_commands="$(suggest_validation_commands "$project_type")"
   echo "## Version sync gate"
   echo "1. git fetch origin"
   echo "2. Confirm current branch, clean worktree, local HEAD, target remote HEAD, and base HEAD."
-  echo "3. If local HEAD differs from the target branch head, run: git pull --ff-only origin <branch>"
+  echo '3. If local is behind the target branch head: STOP and report. Only run `git pull --ff-only` when the task packet explicitly authorizes it.'
   echo "4. If fast-forward fails, branch mismatches, or worktree is dirty: STOP and report. Do not modify files."
   echo
   echo "## Read first"
