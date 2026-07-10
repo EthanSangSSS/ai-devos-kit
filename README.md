@@ -151,7 +151,7 @@ For PR-bound work, also compare local HEAD against the PR head SHA before making
 - `templates/project/`: reusable project templates for Flutter iOS, Swift iOS, AI-agent projects, and Agent Workspace conventions.
 - `scripts/`: project creation, template installation, repo health checks, context collection, Agent Workspace snapshots, run artifact initialization, and handoff prompt generation.
 - `prompts/`: reusable prompts for Codex, Claude Code, Gemini / Agy, and Web ChatGPT review.
-- `docs/`: development workflow, GitHub review, App Store, TestFlight, IAP, Computer Use QA, local model, and security SOPs.
+- `docs/`: development workflow, GitHub review, App Store, TestFlight, IAP, Computer Use QA, local model, security SOPs, and [agent-sop/](docs/agent-sop/) engineering workflow and handoff guidance.
 - `examples/`: example bug cards, project plans, handoff prompts, and PR review requests.
 
 ## Safety model
