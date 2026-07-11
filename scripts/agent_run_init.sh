@@ -79,7 +79,7 @@ head_short="$(git rev-parse --short HEAD 2>/dev/null || echo none)"
   echo "## Version sync gate"
   echo "1. git fetch origin"
   echo "2. Confirm branch, clean worktree, local HEAD, remote target HEAD, and base HEAD."
-  echo "3. If local HEAD differs from target head, run git pull --ff-only origin <branch>."
+  echo '3. If local is behind the target head: STOP and report. Only run `git pull --ff-only` when the task packet explicitly authorizes it.'
   echo "4. If fast-forward fails, branch mismatches, or worktree is dirty: STOP and report."
   echo
   echo "## Initial git status"
