@@ -1,0 +1,39 @@
+name: release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+permissions:
+  contents: write
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Run public-safety scan
+        run: python3 scripts/check_public_safety.py
+
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          notes_file="docs/releases/${GITHUB_REF_NAME}.md"
+          if [ ! -f "$notes_file" ]; then
+            echo "Missing release notes: $notes_file" >&2
+            exit 1
+          fi
+          gh release create "$GITHUB_REF_NAME" \
+            --repo "$GITHUB_REPOSITORY" \
+            --title "$GITHUB_REF_NAME — Public OSS workflow baseline" \
+            --notes-file "$notes_file" \
+            --verify-tag
