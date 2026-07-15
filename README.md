@@ -13,9 +13,14 @@ Core principles: **Verify First**, **Trust Telemetry**, **Assume Isolation**, **
 
 ## Portfolio fast path
 
-Start here if you are reviewing this as a portfolio project:
+Start here if you are reviewing this as a portfolio or OSS workflow project:
 
 - [`docs/PORTFOLIO_OVERVIEW.md`](docs/PORTFOLIO_OVERVIEW.md) — one-page reviewer guide, Mermaid architecture map, core surfaces, and demo flow.
+- [`CONTRIBUTING.md`](CONTRIBUTING.md) — contribution rules and validation discipline.
+- [`SECURITY.md`](SECURITY.md) — security scope for local-first AI-agent workflows.
+- [`.github/PULL_REQUEST_TEMPLATE.md`](.github/PULL_REQUEST_TEMPLATE.md) — PR evidence and safety checklist.
+- [`scripts/check_public_safety.py`](scripts/check_public_safety.py) — dependency-free public-safety scan for docs, scripts, prompts, templates, and examples.
+- [`docs/releases/v0.1.0.md`](docs/releases/v0.1.0.md) — prepared first public release notes.
 - `scripts/agent_workspace_snapshot.sh` — generates a compact repository snapshot for agent consumption.
 - `scripts/agent_run_init.sh` — initializes auditable per-task run artifacts.
 - `scripts/repo_health_check.sh` — verifies repo state before work starts.
@@ -83,6 +88,7 @@ Before handing a project to an AI coding agent, run:
 bash scripts/repo_health_check.sh
 bash scripts/secret_redacted_scan.sh
 bash scripts/next_prompt_builder.sh
+python3 scripts/check_public_safety.py
 ```
 
 ## Agent Workspace
@@ -149,9 +155,9 @@ For PR-bound work, also compare local HEAD against the PR head SHA before making
 
 - `templates/global/`: global agent rules for Codex, Claude Code, Gemini CLI, and Agy.
 - `templates/project/`: reusable project templates for Flutter iOS, Swift iOS, AI-agent projects, and Agent Workspace conventions.
-- `scripts/`: project creation, template installation, repo health checks, context collection, Agent Workspace snapshots, run artifact initialization, and handoff prompt generation.
+- `scripts/`: project creation, template installation, repo health checks, context collection, Agent Workspace snapshots, run artifact initialization, handoff prompt generation, and public-safety checks.
 - `prompts/`: reusable prompts for Codex, Claude Code, Gemini / Agy, and Web ChatGPT review.
-- `docs/`: development workflow, GitHub review, App Store, TestFlight, IAP, Computer Use QA, local model, security SOPs, [agent-sop/](docs/agent-sop/) engineering workflow and handoff guidance, and [agent-skills/](docs/agent-skills/) callable review skills such as `/grill-me`.
+- `docs/`: development workflow, GitHub review, App Store, TestFlight, IAP, Computer Use QA, local model, security SOPs, governance files, [agent-sop/](docs/agent-sop/) engineering workflow and handoff guidance, and [agent-skills/](docs/agent-skills/) callable review skills such as `/grill-me`.
 - `examples/`: example bug cards, project plans, handoff prompts, and PR review requests.
 
 ## Safety model
@@ -162,6 +168,7 @@ Use secret scans before publishing forks or sharing generated prompts:
 
 ```bash
 gitleaks detect --source . --no-git --redact
+python3 scripts/check_public_safety.py
 ```
 
 ## Publish your own fork
@@ -176,6 +183,7 @@ Run a secret scan before publishing any fork:
 
 ```bash
 gitleaks detect --source . --no-git --redact
+python3 scripts/check_public_safety.py
 ```
 
 ## License
