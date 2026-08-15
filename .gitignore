@@ -23,6 +23,17 @@ docs/NEXT_CODEX_PROMPT_*.md
 docs/PROJECT_CONTEXT_FOR_AGENT.md
 _probe/*.raw
 
+# Local secrets and signing material
+**/.mcp.json
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+**/service-account*.json
+**/play-service-account*.json
+
 # Agent workspace generated runtime state
 .agent/current_state.md
 .agent/catalog.json
