@@ -20,7 +20,7 @@ Start here if you are reviewing this as a portfolio or OSS workflow project:
 - [`SECURITY.md`](SECURITY.md) — security scope for local-first AI-agent workflows.
 - [`.github/PULL_REQUEST_TEMPLATE.md`](.github/PULL_REQUEST_TEMPLATE.md) — PR evidence and safety checklist.
 - [`scripts/check_public_safety.py`](scripts/check_public_safety.py) — dependency-free public-safety scan for docs, scripts, prompts, templates, and examples.
-- [`docs/releases/v0.1.0.md`](docs/releases/v0.1.0.md) — prepared first public release notes.
+- [`docs/releases/v0.1.0.md`](docs/releases/v0.1.0.md) — release notes for the published `v0.1.0 — Public AI DevOS baseline` release.
 - `scripts/agent_workspace_snapshot.sh` — generates a compact repository snapshot for agent consumption.
 - `scripts/agent_run_init.sh` — initializes auditable per-task run artifacts.
 - `scripts/repo_health_check.sh` — verifies repo state before work starts.
