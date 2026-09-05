@@ -20,4 +20,4 @@
 - [ ] No secrets exposed
 - [ ] No destructive changes
 - [ ] Bundle/team/IAP ids unchanged or explicitly approved
-- [ ] NEXT_CODEX_PROMPT updated
+- [ ] NEXT_ACTION updated

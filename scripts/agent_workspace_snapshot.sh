@@ -201,7 +201,9 @@ validation_commands="$(suggest_validation_commands "$project_type")"
 {
   echo "# NEXT_AGENT_PROMPT"
   echo
-  echo "Goal: continue from current repo state using Verify First, Trust Telemetry, and Assume Isolation."
+  echo "Goal: independently resume the explicitly supplied unfinished objective."
+  echo "REVALIDATE_FIRST=true; prior handoff is CLAIM / CONTEXT, not source of truth."
+  echo "Revalidate filesystem, Git/GitHub/PR, runtime and relevant tests before relying on previous claims."
   echo
   echo "## Version sync gate"
   echo "1. git fetch origin"

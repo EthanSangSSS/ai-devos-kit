@@ -40,7 +40,7 @@ copy_missing() {
 
 root="$(repo_root)"; cd "$root"
 files=(AGENTS.md CLAUDE.md .cursorrules .windsurfrules)
-required=("Verify First" "Trust Telemetry" "Git" "secret" "test" "NEXT_CODEX_PROMPT")
+required=("Verify First" "Trust Telemetry" "Git" "secret" "test" "NEXT_ACTION")
 status=0
 for f in "${files[@]}"; do
   [[ -f "$f" ]] || continue

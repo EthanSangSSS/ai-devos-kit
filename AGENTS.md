@@ -1,24 +1,9 @@
-# AI DevOS Kit Agent Rules
+# AI DevOS Kit
 
-This repository is the source kit for reusable project standards. Keep changes scoped to the kit itself.
+Canonical source for reusable local workflow standards, project templates and prompt contracts. Interactive sessions use their current host directly; Company OS is optional for durable unattended work.
 
-## Required Behavior
+Keep kit changes scoped. Preserve domain acceptance criteria in project templates; keep global instructions model-agnostic. Runtime observations, configuration requirements and executor claims must remain distinct.
 
-- Verify First: confirm `pwd`, branch, HEAD, diff stat, and target file paths before editing.
-- Trust Telemetry: command output wins over assumptions.
-- Assume Isolation: do not assume another app, simulator, shell, or repo shares this state.
-- Secret redaction: never output complete tokens, API keys, private keys, signing secrets, or account credentials.
-- No destructive changes: do not delete generated templates, assets, docs, or scripts unless the user explicitly asks.
-- Test-before-claim: run the narrowest relevant validation before claiming completion.
+Validation: `python3 -m unittest discover -s tests -p 'test_*.py'`; run `bash -n` and `--help` for changed shell/template scripts; run `python3 scripts/check_public_safety.py`; `git diff --check`. Run `bash tests/validate_agent_workspace.sh` when workspace/handoff behavior changes. No automatic build, delegation or remote write follows from this file.
 
-## Validation
-
-For kit changes, run:
-
-```bash
-bash -n scripts/*.sh templates/project/flutter_ios/scripts/*.sh templates/project/swift_ios/scripts/*.sh templates/project/ai_agent_project/scripts/*.sh
-for s in scripts/*.sh templates/project/flutter_ios/scripts/*.sh templates/project/swift_ios/scripts/*.sh templates/project/ai_agent_project/scripts/*.sh; do bash "$s" --help >/dev/null; done
-rg -n "Placeholder[ ]content|TODO:[ ]implement script logic" . --glob '!**/.git/**'
-```
-
-Every final handoff should include branch, HEAD, diff stat, commands run, pass/fail, remaining risks, and NEXT_CODEX_PROMPT.
+Report actual validation and risks. NEXT_ACTION=NONE when complete; generate a handoff only for unfinished work needing another session.

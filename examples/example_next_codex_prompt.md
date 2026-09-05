@@ -30,7 +30,7 @@ find . -maxdepth 2 -type f | sort | head -100
 1. Scope：列出文件和风险等级 P0/P1/P2/P3。
 2. Implement：最小安全变更。
 3. Fix loop：失败日志 -> 根因 -> 修复 -> 重跑验证。
-4. Handoff：更新 docs/NEXT_CODEX_PROMPT.md。
+4. Handoff：更新 docs/NEXT_ACTION.md。
 
 ## 验证命令
 
@@ -41,7 +41,7 @@ find . -maxdepth 2 -type f | sort | head -100
 - 变更文件列表。
 - 命令结果。
 - 剩余风险。
-- NEXT_CODEX_PROMPT。
+- NEXT_ACTION。
 
 ## Git 收尾
 

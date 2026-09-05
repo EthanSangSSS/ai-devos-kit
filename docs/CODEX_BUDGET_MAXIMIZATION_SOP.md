@@ -6,4 +6,4 @@
 - Gemini/Agy: long-context scan, low-cost draft, batch review.
 - Local MLX: offline draft, log summary, non-authoritative notes.
 
-Every Codex round starts with preflight and ends with NEXT_CODEX_PROMPT.
+Use task-relevant preflight. Finish with NEXT_ACTION=NONE or one bounded next action; produce a handoff only when needed.

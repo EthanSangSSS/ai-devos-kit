@@ -24,7 +24,7 @@ for script in scripts/agent_workspace_snapshot.sh scripts/agent_run_init.sh; do
 done
 
 tmp_dir="$(mktemp -d)"
-trap 'rm -rf "$tmp_dir"' EXIT
+trap 'printf "fixture retained: %s\n" "$tmp_dir"' EXIT
 
 cd "$tmp_dir"
 git init -q

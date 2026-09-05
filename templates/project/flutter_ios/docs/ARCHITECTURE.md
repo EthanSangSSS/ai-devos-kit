@@ -25,4 +25,4 @@
 
 ## Risks
 
-Keep this synchronized with `KNOWN_RISKS.md` and `NEXT_CODEX_PROMPT.md`.
+Keep this synchronized with `KNOWN_RISKS.md` and the bounded next action.

@@ -1,3 +1,3 @@
-# Gemini/Agy Fallback Code Review
+# Bounded Agy slice
 
-审查 diff，找 P0/P1/P2 风险。不要泛泛总结。输出 findings first，并标注需要 Codex 验证的最小命令。
+Use only for a real host capability gap or explicit executor request. Fill `docs/HANDOFF_CONTRACT.md`; remote_write_authority=NONE. The controller pins the exact binary/model/effort/sandbox and independently checks runtime init telemetry. Mismatch fails closed; do not substitute a model. Return structured claim, evidence references, validation results, changed paths, risks and negative remote-write attestations. No durable controller state belongs to this worker.

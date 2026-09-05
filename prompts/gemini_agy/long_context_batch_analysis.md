@@ -1,3 +1,3 @@
-# Gemini/Agy Long Context Batch Analysis
+# Bounded Agy slice
 
-只做批量阅读、分类、候选问题列表。不要改文件。输出 JSON：findings、evidence、risk、recommended_next_check。
+Use only for a real host capability gap or explicit executor request. Fill `docs/HANDOFF_CONTRACT.md`; remote_write_authority=NONE. The controller pins the exact binary/model/effort/sandbox and independently checks runtime init telemetry. Mismatch fails closed; do not substitute a model. Return structured claim, evidence references, validation results, changed paths, risks and negative remote-write attestations. No durable controller state belongs to this worker.

@@ -11,4 +11,4 @@ Record agent-visible changes only.
 - Commands run:
 - Result:
 - Remaining risk:
-- NEXT_CODEX_PROMPT updated:
+- NEXT_ACTION updated:
