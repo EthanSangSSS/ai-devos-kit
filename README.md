@@ -37,7 +37,7 @@ AI coding agents are useful, but unmanaged agent workflows drift quickly:
 - handoffs between ChatGPT, Codex, Claude Code, Gemini CLI, Agy, and local tools lose context;
 - release-readiness and App Store checks become manual memory.
 
-AI DevOS Kit treats the development environment as an operating system for agents: scripts, command centers, templates, validation gates, and run artifacts become the control plane.
+AI DevOS Kit provides reusable standards and templates. The current interactive host owns ordinary work; Company OS is optional for durable unattended execution.
 
 ## What this kit does
 
@@ -82,7 +82,7 @@ cd /path/to/your/app
 bash "$AI_DEVOS_KIT_ROOT/scripts/install_project_kit.sh"
 ```
 
-Before handing a project to an AI coding agent, run:
+For an explicit repository handoff, select the relevant checks; secret scanning is needed for sensitive or publication-bound material:
 
 ```bash
 bash scripts/repo_health_check.sh
@@ -140,7 +140,7 @@ Generated runtime outputs under `.agent/` are gitignored by default because they
 
 ## Version-sync gate
 
-Every local agent task should start by proving the actual repository state:
+Before repository writes or claims about synchronization, establish the relevant Git identity:
 
 ```bash
 git fetch origin
@@ -149,7 +149,7 @@ git branch --show-current
 git rev-parse HEAD
 ```
 
-For PR-bound work, also compare local HEAD against the PR head SHA before making changes. If the worktree is dirty, the branch is wrong, the repo cannot fast-forward, or HEAD does not match the expected PR head, the agent should stop and report instead of modifying files.
+For PR-bound work, also compare local HEAD against the PR head SHA before making changes. Stop if dirty changes are unrelated or cannot be attributed, the branch or expected HEAD differs, or synchronization is not a safe fast-forward. Task-owned edits are expected during implementation. Fetch is read-only verification; it does not authorize a pull or any branch mutation.
 
 ## Repository layout
 
@@ -189,3 +189,8 @@ python3 scripts/check_public_safety.py
 ## License
 
 MIT
+## Interactive workflow vNext
+
+Use [the model-agnostic workflow contract](docs/AGENT_WORKFLOW_VNEXT.md) and [minimal handoff contract](docs/HANDOFF_CONTRACT.md). Ordinary tasks stay on their current host. No mandatory next prompt, native worker, or Company OS hop.
+
+See [Agy wrapper limits](docs/AGY_DELEGATE.md) and [representative regression evidence](docs/WORKFLOW_REGRESSION.md) for runtime acceptance boundaries.

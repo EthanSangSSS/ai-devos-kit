@@ -14,4 +14,4 @@ bash scripts/secret_redacted_scan.sh
 
 - 先读 `AGENTS.md`。
 - 再读 `docs/ARCHITECTURE.md`、`docs/TESTING.md` 或 `docs/RUNBOOK.md`。
-- 每轮结束更新 `docs/NEXT_CODEX_PROMPT.md` 和 `docs/CHANGELOG_AGENT.md`。
+- 完成时 NEXT_ACTION=NONE；需要交接时才生成简短 handoff。

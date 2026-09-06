@@ -1,3 +1,5 @@
+> ACTIVE=false: retained historical pilot. Its default executor routing and round limits are retired. Use AGENT_WORKFLOW_VNEXT.md for active policy. Qwen/Tutti-specific safety constraints below remain relevant only when those executors are explicitly authorized.
+
 # Ethan Local Multi-Agent Delegation and Codex Throttling SOP v1.1 Pilot
 
 版本：1.1 Pilot

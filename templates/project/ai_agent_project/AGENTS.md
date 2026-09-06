@@ -30,4 +30,6 @@
 
 ## 每轮交付
 
-必须输出：当前分支、HEAD、diff stat、运行命令、通过/失败、剩余风险、NEXT_CODEX_PROMPT。
+交付相关改动、实际验证与风险；NEXT_ACTION=NONE 或一个有界行动。涉及 Git 时附 exact branch/HEAD。
+
+For GitHub/CI work, load `docs/GITHUB_EXECUTION_POLICY.md`; it carries the repository-scoped self-hosted runner constraints.

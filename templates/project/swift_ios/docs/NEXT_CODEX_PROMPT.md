@@ -1,17 +1,3 @@
-# NEXT_CODEX_PROMPT
+# Optional session handoff
 
-Goal:
-
-Current branch / HEAD:
-
-Verified evidence:
-
-Remaining risks:
-
-Do not touch:
-
-Next smallest task:
-
-Validation commands:
-
-Expected deliverables:
+ACTIVE=false (legacy filename compatibility). Populate only when a real session transfer is needed; use docs/HANDOFF_CONTRACT.md from the canonical kit. Otherwise NEXT_ACTION=NONE.

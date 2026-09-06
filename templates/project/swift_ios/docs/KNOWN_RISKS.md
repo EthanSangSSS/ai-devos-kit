@@ -4,4 +4,4 @@
 | --- | --- | --- | --- | --- |
 | P1 | TBD | TBD | TBD | TBD |
 
-Carry unresolved items into NEXT_CODEX_PROMPT.
+Carry unresolved items into NEXT_ACTION.

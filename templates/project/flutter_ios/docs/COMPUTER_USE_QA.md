@@ -19,4 +19,4 @@ Use only when explicitly requested.
 
 ## Exit
 
-Create bug cards for failures. Do not claim absolute bug-free. Update NEXT_CODEX_PROMPT.
+Create bug cards for failures. Do not claim absolute bug-free. Record unresolved work only when present; otherwise NEXT_ACTION=NONE.

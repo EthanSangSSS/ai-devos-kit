@@ -1,0 +1,8 @@
+# Workflow vNext bounded controller fallback; explicit model, no silent downgrade.
+model = "gpt-5.6-luna"
+model_reasoning_effort = "max"
+developer_instructions = "This named profile is a bounded controller-owned fallback executor. Follow the supplied Task Packet and allowed paths. Do not delegate, spawn descendants, start another Codex runtime, push, mutate PRs, or perform remote writes. Return claims and evidence to the controller; the controller owns acceptance. Report model or capability failure explicitly; never substitute a different model."
+
+[features]
+multi_agent = false
+multi_agent_v2 = false

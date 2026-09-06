@@ -7,4 +7,4 @@ Actual:
 Repro:
 Fix owner:
 Validation:
-NEXT_CODEX_PROMPT impact:
+NEXT_ACTION impact:

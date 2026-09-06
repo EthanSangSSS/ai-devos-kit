@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "purpose": "Acceptance expectations only; not a second routing registry or runtime evidence.",
+  "cases": [
+    {
+      "id": "R1",
+      "scenario": "trivial normal request",
+      "expected": {
+        "execution": "native",
+        "skills_loaded": 0,
+        "delegates": 0,
+        "approval_ceremony": false
+      }
+    },
+    {
+      "id": "R2",
+      "scenario": "Web domain skill route",
+      "expected": {
+        "registry": "EthanSangSSS/web-chatgpt-skills/CATALOG.yaml",
+        "exclusions_first": true,
+        "primary_count_max": 1,
+        "duplicate_router": false
+      }
+    },
+    {
+      "id": "R3",
+      "scenario": "bounded edit accessible through DevSpace",
+      "expected": {
+        "execution": "web_direct",
+        "agy_called": false
+      }
+    },
+    {
+      "id": "R4",
+      "scenario": "genuine Web capability gap",
+      "expected": {
+        "executor": "agy",
+        "init_model": "gemini-3.8-flash-high",
+        "effort": "high",
+        "sandbox_requested": true
+      }
+    },
+    {
+      "id": "R5",
+      "scenario": "Agy mismatch or failure",
+      "expected": {
+        "classification_visible": true,
+        "silent_fallback": false,
+        "unverified_profile_executed": false
+      }
+    },
+    {
+      "id": "R6",
+      "scenario": "GitHub review",
+      "expected": {
+        "remote_truth_read": true,
+        "unauthorized_mutation": false
+      }
+    },
+    {
+      "id": "R7",
+      "scenario": "local repo implementation",
+      "expected": {
+        "writer_count": 1,
+        "automatic_luna": false
+      }
+    },
+    {
+      "id": "R8",
+      "scenario": "destructive or credential boundary",
+      "expected": {
+        "boundary": "fail_closed",
+        "unauthorized_access": false
+      }
+    },
+    {
+      "id": "R9",
+      "scenario": "old session handoff",
+      "expected": {
+        "fresh_identity_read": true,
+        "handoff_trusted": false,
+        "historical_tests_promoted": false
+      }
+    },
+    {
+      "id": "R10",
+      "scenario": "durable unattended task",
+      "expected": {
+        "controller": "company_os",
+        "interactive_work_requires_lease": false
+      }
+    },
+    {
+      "id": "R11",
+      "scenario": "conflicting skill",
+      "expected": {
+        "source_disclosed": true,
+        "rule_disclosed": true,
+        "unexplained_pause": false
+      }
+    },
+    {
+      "id": "R12",
+      "scenario": "trivial Agy delegate",
+      "expected": {
+        "input_tokens_measured": true,
+        "tool_events": 0,
+        "profile_appropriate": true,
+        "control_loss": false,
+        "overhead_reduced": true
+      }
+    }
+  ]
+}

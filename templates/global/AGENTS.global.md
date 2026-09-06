@@ -1,48 +1,11 @@
-# Global Agent Standard
+# Ethan global working agreements
 
-本文件用于 Codex / Claude Code / Agy / Gemini CLI。它是项目级 `AGENTS.md` 的上游标准，中文为主，保留必要 English technical terms。
-
-## Non-Negotiables
-
-- Verify First：先探测当前目录、分支、HEAD、依赖、构建目标和测试命令，再下结论。
-- Trust Telemetry：命令输出优先于推理；输出矛盾时修正计划。
-- Assume Isolation：repo、shell、simulator、CI、本地配置互相隔离，不能跨项目假设。
-- No destructive changes：不删除资产，不 reset，不 clean，不改全局 shell / SSH / Keychain / signing，除非用户明确要求。
-- Git hygiene：改动前确认 `git status --short`；提交前看 `git diff --stat` 和关键 diff；不 push，除非用户明确要求。
-- Secret redaction：不要输出完整 token / API key / private key；扫描结果必须脱敏。
-- Test-before-claim：未运行验证就不能声称通过；不能运行时说明 blocker 和最近的静态检查。
-- Reusable First：优先沉淀模板、脚本、SOP、checklist，而不是一次性说明。
-
-## Priority Levels
-
-- P0：会导致数据丢失、密钥泄露、支付/签名/上架失败、生产不可用。
-- P1：核心功能、构建、测试、IAP、App Store review 高概率失败。
-- P2：质量、可维护性、可接力、可观测性风险。
-- P3：文案、格式、低风险优化。
-
-## 每轮输出状态
-
-每轮交付必须包含：
-
-```text
-当前分支:
-HEAD:
-diff stat:
-运行命令:
-通过/失败:
-剩余风险:
-NEXT_CODEX_PROMPT:
-```
-
-## 禁止项
-
-- 不要假设路径；用 `pwd`、`git rev-parse --show-toplevel`、`rg --files` 验证。
-- 不要删除资产、数据源、StoreKit 文件、迁移脚本或用户文档。
-- 不要改 bundle id / team id / IAP product id，除非用户明确要求并提供目标值。
-- 不要盲目大重构；先写 scope、风险和验证标准。
-- 不要泄露完整密钥；只输出前缀或 `[REDACTED]`。
-- 不要 push、创建 release、改 CI secret、改签名配置，除非用户明确要求。
-
-## NEXT_CODEX_PROMPT 要求
-
-每次工作结束都要更新或输出 `NEXT_CODEX_PROMPT`，包含：当前状态、已验证证据、剩余风险、下一轮最小任务、禁止范围、建议验证命令。
+- Verify First; Trust Telemetry; Assume Isolation. Claims and old handoffs are context, not current evidence. Bind consequential conclusions to the exact workspace, Git identity, artifact and runtime observed.
+- The surface Ethan opened owns the task and final verification. Use its available capabilities directly. For Web, delegate only for an actual capability gap or explicit task request. Direct Codex selects one execution owner by quota savings, coordination cost and quality; delegate when savings clearly justify it; PRIMARY retains judgment and acceptance. Keep these paths separate from durable Company OS. Never silently change executor/model.
+- One writer per repository/worktree/task. Preserve unrelated dirty work. Revalidate repository, branch, HEAD, status, upstream, remote base/head and PR state before consequential Git writes.
+- Read-only means no mutation. Existing task authorization applies; do not ask again for already authorized reversible work. Git publication, destructive actions, credentials, dependencies, signing, payment and releases require explicit scope. Never infer merge authority from a request to implement or create a Draft PR.
+- Do not read, copy or expose secrets, credentials, cookies, Keychain values or .env contents. External executors receive a bounded task contract, explicit allowed paths and remote-write authority; keep unauthorized data local.
+- No recursive, batch, wildcard or directory deletion. Preserve source materials and archival provenance; migration must have a hash-bound rollback path.
+- Use the narrowest strongly matching skill. Explicit user instructions take precedence over user-maintained skill guidance; platform instructions retain their priority. If an instruction changes the authorized route or blocks progress, report BLOCKING_INSTRUCTION_SOURCE, BLOCKING_RULE and EFFECT with the exact source and rule.
+- Validate in proportion to the change and report only observed results, remaining gaps and NEXT_ACTION=NONE or one bounded action. Produce a handoff prompt only when a handoff is actually needed.
+- Do not invoke Codex Security, TAC or protected security scans.

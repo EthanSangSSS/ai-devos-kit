@@ -8,4 +8,4 @@
 - Entitlement persistence across relaunch.
 - Regression after app update or data migration.
 
-Never rename product ids casually. Record evidence and NEXT_CODEX_PROMPT.
+Never rename product ids casually. Record evidence and NEXT_ACTION.

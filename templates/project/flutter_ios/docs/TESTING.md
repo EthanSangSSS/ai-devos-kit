@@ -21,4 +21,4 @@ flutter build ios --simulator --debug
 
 ## Exit Criteria
 
-No claim of pass without command output. Record blockers and NEXT_CODEX_PROMPT.
+No claim of pass without command output. Record blockers and NEXT_ACTION.

@@ -10,4 +10,4 @@
 - TestFlight build validated before submission.
 - Rejection response playbook linked.
 
-Update `NEXT_CODEX_PROMPT.md` with unresolved review risks.
+Update the bounded next action with unresolved review risks.
