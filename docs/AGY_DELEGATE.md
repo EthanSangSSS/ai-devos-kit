@@ -88,6 +88,6 @@ Result must be the final event. Protocol errors, excess output and timeouts stop
 the child process group. Additional failure classes: `PACKET_TOO_LARGE`,
 `OUTPUT_LIMIT`, `TERMINATION_UNVERIFIED`.
 
-Runtime acceptance is pending a successful smoke for the exact installed file.
+The 2026-09-06 recovery reproduced boolean `enum:[false]` failure after model init with zero usage; the same schema with a plain boolean executed successfully. The wrapper now uses plain boolean schema types while post-validation still requires both flags to be exactly false. Exact runtime smoke passed with `gemini-3.8-flash-high`, `HEALTH_OK`, zero observed tool calls and nonzero usage. Revalidate the installed file in each new environment; earlier authentication failures were transient and are not schema evidence.
 No minimal general-purpose Agy profile is selected: the available domain profile
 is not suitable, and slash-command disabling causes loss of plan-mode control.

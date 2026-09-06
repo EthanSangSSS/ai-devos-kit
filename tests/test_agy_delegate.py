@@ -56,6 +56,11 @@ class DelegateTests(unittest.TestCase):
         self.assertNotIn('--disable-slash-commands',cmd)
         self.assertNotIn('--agent',cmd)
 
+    def test_write_flags_use_plain_booleans_for_agy_schema_compatibility(self):
+        schema=json.loads(self.m.command()[self.m.command().index('--json-schema')+1])
+        for key in ('pushed', 'pr_mutated'):
+            self.assertEqual({'type': 'boolean'}, schema['properties'][key])
+
     def test_normal_packet_requires_scope_and_rejects_sensitive_paths(self):
         packet=self.m.build_packet('run focused checks', ['scripts/agy_delegate.py'], 'local test only')
         self.assertIn('Allowed scope:',packet)
